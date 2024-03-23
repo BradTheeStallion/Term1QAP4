@@ -77,8 +77,7 @@ while True:
     #The 7 constants below are saved in the file Defaults.dat
     #I didn't include HST since it's baked into my Hst() function
 
-    #f = open("Defaults.dat", "r")
-    f = open("SecondHalf/Python/QAP4/Defaults.dat", "r")
+    f = open("Defaults.dat", "r")
     NEXT_POL_NUM = int(f.readline()) #Next  policy  number
     BAS_PREM = float(f.readline()) #Basic  premium
     DISC_ADD_CAR = float(f.readline()) #Discount  for additional  cars
@@ -237,8 +236,8 @@ while True:
     print("----------------------------------------------")
     print()
     
-    DataFile("SecondHalf/Python/QAP4/Claims.dat")
-    f = open("SecondHalf/Python/QAP4/Claims.dat", "a")
+    DataFile("Claims.dat")
+    f = open("Claims.dat", "a")
     if ClaimList:
         for item in ClaimList:
             f.write("{}\n".format(f"Previous Claim #: {item[0]}, Date: {item[1]}, Amt: {item[2]}"))
@@ -250,7 +249,7 @@ while True:
     f.close()
     
     NEXT_POL_NUM += 1
-    QAP4.UpdateFrstLn("SecondHalf/Python/QAP4/Defaults.dat", (str(NEXT_POL_NUM)))
+    QAP4.UpdateFrstLn("Defaults.dat", (str(NEXT_POL_NUM)))
 
     #Housekeeping
     if not QAP4.Whoops("\nPress return to enter another customer, or type END and press return to exit the program: "):
